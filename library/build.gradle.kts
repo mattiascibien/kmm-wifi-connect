@@ -8,27 +8,28 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = "io.github.kotlin"
+group = "net.mattiascibien.kmm-wifi-connect"
 version = "1.0.0"
 
 kotlin {
-    jvm()
     androidTarget {
         publishLibraryVariants("release")
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
+        dependencies {
+            implementation(libs.androidx.startup.runtime)
+        }
     }
     iosX64()
     iosArm64()
     iosSimulatorArm64()
-    linuxX64()
 
     sourceSets {
         val commonMain by getting {
             dependencies {
-                //put your multiplatform dependencies here
+                implementation(libs.kotlinx.coroutines)
             }
         }
         val commonTest by getting {
@@ -40,7 +41,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
+    namespace = "net.mattiascibien.wificonnect"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -51,6 +52,18 @@ android {
     }
 }
 
+//repositories {
+//    maven {
+//        name = "githubPackages"
+//        url = uri("https://maven.pkg.github.com/mattiascibien/kmm-wifi-connect")
+//        // username and password (a personal Github access token) should be specified as
+//        // `githubPackagesUsername` and `githubPackagesPassword` Gradle properties or alternatively
+//        // as `ORG_GRADLE_PROJECT_githubPackagesUsername` and `ORG_GRADLE_PROJECT_githubPackagesPassword`
+//        // environment variables
+//        credentials(PasswordCredentials::class)
+//    }
+//}
+
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
@@ -59,28 +72,28 @@ mavenPublishing {
     coordinates(group.toString(), "library", version.toString())
 
     pom {
-        name = "My library"
-        description = "A library."
-        inceptionYear = "2024"
-        url = "https://github.com/kotlin/multiplatform-library-template/"
+        name = "Kotlin Multiplatform WiFi Connect"
+        description = "Library for connecting to WiFi network in a simple and cross-platform way"
+        inceptionYear = "2025"
+        url = "https://github.com/mattiascibien/kmm-wifi-connect/"
         licenses {
             license {
-                name = "XXX"
-                url = "YYY"
-                distribution = "ZZZ"
+                name = "The Apache License, Version 2.0"
+                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
         }
         developers {
             developer {
-                id = "XXX"
-                name = "YYY"
-                url = "ZZZ"
+                id = "mattiascibien"
+                name = "Mattias Cibien"
+                url = "https://github.com/mattiascibien/"
             }
         }
         scm {
-            url = "XXX"
-            connection = "YYY"
-            developerConnection = "ZZZ"
+            url = "https://github.com/mattiascibien/kmm-wifi-connect/"
+            connection = "scm:git:git://github.com/mattiascibien/kmm-wifi-connect.git"
+            developerConnection = "scm:git:ssh://git@github.com/mattiascibien/kmm-wifi-connect.git"
         }
     }
 }
