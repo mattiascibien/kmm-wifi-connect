@@ -7,6 +7,7 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
+@Suppress("unused")
 actual suspend fun connectToWifi(ssid: String, type: WiFiType, password: String?) : Boolean {
     return suspendCoroutine { continuation ->
         val config = if (password == null)
