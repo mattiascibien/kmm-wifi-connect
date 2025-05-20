@@ -8,7 +8,7 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = "net.mattiascibien.kmm-wifi-connect"
+group = "net.mattiascibien"
 
 version = "SNAPSHOT"
 
@@ -74,7 +74,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates(group.toString(), "library", version.toString())
+    coordinates(group.toString(), "kmm-wifi-connect", version.toString())
 
     pom {
         name = "Kotlin Multiplatform WiFi Connect"
