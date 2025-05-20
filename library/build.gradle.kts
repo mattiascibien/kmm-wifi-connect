@@ -9,7 +9,12 @@ plugins {
 }
 
 group = "net.mattiascibien.kmm-wifi-connect"
-version = "1.0.0"
+
+version = "SNAPSHOT"
+
+if (project.hasProperty("ciVersion")) {
+    version = project.properties["ciVersion"].toString()
+}
 
 kotlin {
     androidTarget {
