@@ -1,6 +1,5 @@
 package net.mattiascibien.wificonnect
 
-import android.annotation.TargetApi
 import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
@@ -9,18 +8,13 @@ import android.net.wifi.WifiManager
 import android.net.wifi.WifiNetworkSpecifier
 import android.net.wifi.WifiNetworkSuggestion
 import android.os.Build
+import androidx.annotation.RequiresApi
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
-/**
- * Connects to the specified Wi-Fi Network
- *
- * @param ssid The network SSID
- * @param type The network type
- * @param password A password (optional for unsecured networks)
- */
-@TargetApi(Build.VERSION_CODES.Q)
+@Suppress("unused")
+@RequiresApi(Build.VERSION_CODES.Q)
 actual suspend fun connectToWifi(ssid: String, type: WiFiType, password: String?) : Boolean {
     return suspendCoroutine { continuation ->
         val wifiManager = AndroidServicesImpl.getInstance().wifiManager

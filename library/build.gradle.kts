@@ -25,6 +25,7 @@ kotlin {
         }
         dependencies {
             implementation(libs.androidx.startup.runtime)
+            implementation(libs.androidx.annotation)
         }
     }
     iosX64()
