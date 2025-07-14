@@ -1,4 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -62,7 +61,7 @@ android {
 //    maven {
 //        name = "githubPackages"
 //        url = uri("https://maven.pkg.github.com/mattiascibien/kmm-wifi-connect")
-//        // username and password (a personal Github access token) should be specified as
+//        // username and password (a personal GitHub access token) should be specified as
 //        // `githubPackagesUsername` and `githubPackagesPassword` Gradle properties or alternatively
 //        // as `ORG_GRADLE_PROJECT_githubPackagesUsername` and `ORG_GRADLE_PROJECT_githubPackagesPassword`
 //        // environment variables
@@ -71,7 +70,7 @@ android {
 //}
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    publishToMavenCentral()
 
     signAllPublications()
 
