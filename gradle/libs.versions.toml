@@ -1,11 +1,12 @@
 [versions]
-agp = "8.5.2"
+agp = "8.10.1"
 kotlin = "2.2.0"
 kotlinx-coroutines = "1.10.2"
 android-minSdk = "29"
-android-compileSdk = "34"
+android-compileSdk = "35"
 androidx-annotation = "1.9.1"
 androidx-startup-runtime = "1.2.0"
+vanniktech-mavenPublish = "0.33.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -16,4 +17,4 @@ androidx-annotation = { module = "androidx.annotation:annotation", version.ref =
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.33.0" }
+vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech-mavenPublish" }
