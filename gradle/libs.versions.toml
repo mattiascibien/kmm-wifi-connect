@@ -6,7 +6,7 @@ android-minSdk = "29"
 android-compileSdk = "35"
 androidx-annotation = "1.9.1"
 androidx-startup-runtime = "1.2.0"
-vanniktech-mavenPublish = "0.33.0"
+vanniktech-mavenPublish = "0.34.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
