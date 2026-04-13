@@ -4,7 +4,7 @@ kotlin = "2.2.10"
 kotlinx-coroutines = "1.10.2"
 android-minSdk = "29"
 android-compileSdk = "35"
-androidx-annotation = "1.9.1"
+androidx-annotation = "1.10.0"
 androidx-startup-runtime = "1.2.0"
 vanniktech-mavenPublish = "0.36.0"
 
